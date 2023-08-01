@@ -5,8 +5,8 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class User {
-    private int id;
-    private String userName;
-    private String nickname;
+public class Follow {
+    Integer id;
+    String author_id;
+    String follower_id;
 }
