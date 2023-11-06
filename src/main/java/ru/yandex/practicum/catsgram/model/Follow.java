@@ -1,12 +1,27 @@
 package ru.yandex.practicum.catsgram.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-
-@Data
-@AllArgsConstructor
 public class Follow {
-    Integer id;
-    String author_id;
-    String follower_id;
+    private String author;
+    private String follower;
+
+    public Follow(String author, String follower) {
+        this.author = author;
+        this.follower = follower;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getFollower() {
+        return follower;
+    }
+
+    public void setFollower(String follower) {
+        this.follower = follower;
+    }
 }

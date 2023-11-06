@@ -5,7 +5,7 @@ import java.util.List;
 public class FeedParams {
     private String sort;
     private Integer size;
-    private List<String> friendsIds;
+    private List<String> friendsEmails;
 
     public void setSort(String sort) {
         this.sort = sort;
@@ -23,11 +23,11 @@ public class FeedParams {
         return size;
     }
 
-    public void setFriendsIds(List<String> friendsEmails) {
-        this.friendsIds = friendsEmails;
+    public void setFriendsEmails(List<String> friendsEmails) {
+        this.friendsEmails = friendsEmails;
     }
 
-    public List<String> getFriendsIds() {
-        return friendsIds;
+    public List<String> getFriendsEmails() {
+        return friendsEmails;
     }
 }

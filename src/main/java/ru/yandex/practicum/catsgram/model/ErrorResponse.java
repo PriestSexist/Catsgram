@@ -1,12 +1,13 @@
 package ru.yandex.practicum.catsgram.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter
-@Setter
-@AllArgsConstructor
 public class ErrorResponse {
-    String error;
+    private final String error;
+
+    public ErrorResponse(String error) {
+        this.error = error;
+    }
+
+    public String getError() {
+        return error;
+    }
 }

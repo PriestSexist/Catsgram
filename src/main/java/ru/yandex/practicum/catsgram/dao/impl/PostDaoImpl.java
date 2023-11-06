@@ -1,6 +1,5 @@
 package ru.yandex.practicum.catsgram.dao.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import ru.yandex.practicum.catsgram.dao.PostDao;
@@ -17,13 +16,13 @@ public class PostDaoImpl implements PostDao {
 
     private final JdbcTemplate jdbcTemplate;
 
-    @Autowired
-    public PostDaoImpl(JdbcTemplate jdbcTemplate) {
+    public PostDaoImpl(JdbcTemplate jdbcTemplate){
         this.jdbcTemplate = jdbcTemplate;
     }
 
     @Override
     public Collection<Post> findPostsByUser(User user) {
+		// метод принимает в виде аргумента строку запроса, преобразователь и аргумент — id пользователя
         String sql = "select * from cat_post where author_id = ? order by creation_date desc";
 
         return jdbcTemplate.query(sql, (rs, rowNum) -> makePost(user, rs), user.getId());
